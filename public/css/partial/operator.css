@@ -1,0 +1,155 @@
+.operator {
+  width: 48px;
+  height: 48px;
+  background-color: #ef4056;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: fixed;
+  bottom: 32px;
+  right: 50px;
+  z-index: 2;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    content: url("../../svg/operator.svg");
+    appearance: none;
+    display: block;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  input[type="checkbox"]:checked {
+    content: url("../../svg/close.svg");
+  }
+  input[type="checkbox"]:checked ~ .operator__page {
+    display: block;
+  }
+
+  .operator__page {
+    position: fixed;
+    bottom: 78px;
+    right: 50px;
+    width: 360px;
+    height: 495px;
+    background-color: white;
+    border-radius: 16px;
+    font-family: var(--IranYekan);
+    font-weight: 600;
+    border: 1px solid #ef4056;
+    display: none;
+    overflow-y: hidden;
+    cursor: context-menu;
+
+    .operator__page__top {
+      width: 100%;
+      height: 55px;
+      background-color: #ef4056;
+      color: white;
+      font-size: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px;
+      border-radius: 16px 16px 0 0;
+
+      .operator__page__back {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    .operator__page__info {
+      padding: 12px 8px 20px 8px;
+      line-height: 2.15;
+      color: rgba(0, 0, 0, 0.808);
+      height: 440px;
+      border-radius: 0 0 16px 16px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      .operator__page__info__title {
+        font-size: 19px;
+        height: 40px;
+        margin-bottom: 4px;
+        cursor: text;
+      }
+      .operator__page__info__subtitle {
+        font-size: 14px;
+        width: 325px;
+        cursor: text;
+      }
+
+      .operator__page__questions {
+        margin: 16px 0 20px 0;
+        .operator__page__question {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 15px;
+          border: 1px solid #e0e0e2;
+          padding: 12px;
+          margin: 8px 0;
+          border-radius: 8px;
+          width: 325px;
+
+          .operator__page__text {
+            padding-bottom: 12px;
+            width: 252px;
+            cursor: text;
+          }
+          .operator__page__icon {
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+
+      .operator__page__bottom {
+        width: 325px;
+        height: 86px;
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        .operator__page__bottom__text {
+          font-size: 14px;
+          line-height: 2.15;
+          margin-bottom: 8px;
+          cursor: text;
+        }
+
+        .operator__btn {
+          display: inline-block;
+          padding: 12px 16px;
+          outline: unset;
+          border: unset;
+          width: 206px;
+          height: 48px;
+          background-color: #19bfd3;
+          font-family: var(--IranYekan);
+          font-size: 14px;
+          font-weight: 600;
+          color: white;
+          border-radius: 25px;
+          cursor: pointer;
+          .operator__btn__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
